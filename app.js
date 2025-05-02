@@ -18,26 +18,26 @@ let allPlayers = []; // Lagrer alle spillerne
 function cleanString(str) {
     return str
       .toLowerCase()
-      .normalize("NFD")                    // fjerner aksenter
-      .replace(/\p{Diacritic}/gu, "")     // fjerner diakritiske tegn
-      .replace(/\s+/g, "")                // fjerner mellomrom
-      .replace(/[^a-z0-9]/g, "");         // fjerner spesialtegn
+      .normalize("NFD")                    
+      .replace(/\p{Diacritic}/gu, "")     
+      .replace(/\s+/g, "")                
+      .replace(/[^a-z0-9]/g, "");        
 }
 
-// 1. Fetch all players once
+
 async function fetchData() {
     try {
         let response = await fetch(apiEndpoint);
         let data = await response.json();
-        allPlayers = data; // Lagrer alle spillere globalt
+        allPlayers = data;
     } catch (error) {
         console.log("Error when fetching data", error);
     }
 }
 
-fetchData(); // Call it once on page load
+fetchData();
 
-// 2. Search locally when user submits
+
 searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -47,15 +47,15 @@ searchForm.addEventListener("submit", (event) => {
  
      const searchLeague =  inputLeague.value.toLowerCase().replace(/\s+/g, "")  || 0;
 
-     const searchTeam   =  inputTeam.value.toLowerCase().replace(/\s+/g, "")                  || 0;
+     const searchTeam   =  inputTeam.value.toLowerCase().replace(/\s+/g, "")    || 0;
 
      const searchOvr    =  parseInt(input.value)            || 0;
  
      const searchAge    =  parseInt(inputAge.value)         || 0;
 
-     const searchOvrMax    =  parseInt(maxRating.value)         || 99;
+     const searchOvrMax    =  parseInt(maxRating.value)     || 99;
  
-     const searchAgeMax    =  parseInt(maxAge.value)      || 99;
+     const searchAgeMax    =  parseInt(maxAge.value)        || 99;
 
     
      const filteredPlayers = allPlayers.filter(player => {
@@ -80,7 +80,7 @@ searchForm.reset()
 
 // 3. Render the list
 function renderPlayers(playerList) {
-    resultContainer.innerHTML = ''; // Clear old results
+    resultContainer.innerHTML = ''; 
 
     if (playerList.length === 0) {
         resultContainer.textContent = "No players found.";
