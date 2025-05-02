@@ -68,6 +68,7 @@ form{
     align-items: start;
     width:fit-content;
     padding-right:20px;
+    padding-top: 10px;
 
 }
 
@@ -76,6 +77,11 @@ form{
     padding-right: 10px;
     margin-right: 20px;
     padding-top: 15px;
+    
+}
+
+#link{
+    cursor: pointer;
 }
 
 #details{

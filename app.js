@@ -90,7 +90,7 @@ function renderPlayers(playerList) {
     playerList.forEach(player => {
         const playerDiv = document.createElement("div");
         playerDiv.innerHTML = `
-            <p><strong>${player.Name}</strong>  ${player.Team}, ${player.League} <br>${player.Position} - Age: ${player.Age}   - Rating: ${player.OVR}</p>
+            <p id="link"><strong>${player.Name}</strong>  ${player.Team}, ${player.League} <br>${player.Position} - Age: ${player.Age}   - Rating: ${player.OVR}</p>
             
         `;
         playerDiv.addEventListener("click", () => ShowPlayer(player));
