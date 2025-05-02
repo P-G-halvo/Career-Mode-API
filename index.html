@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM-API</title>
+    <script src="app.js" defer ></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Player Search</h1>
+<div id="content-wrapper">
+    <form id="searchform">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Example: ">
+        <label for="nation">Nation</label>
+        <input type="text" id="nation" placeholder="Example: portugal">
+        <label for="league">League</label>
+        <input type="text" id="league" placeholder="Example: ">
+        <label for="Team">Team</label>
+        <input type="text" id="team" placeholder="Example: Flamengo">
+        <label for="age">Player Age</label>
+        <input type="number" id="age" placeholder="Min Age:">
+        <label for="age-max"></label>
+        <input type="number" id="age-max" placeholder="Max Age:">
+        <label for="ovr">Rating</label>
+        <input type="number" id="ovr" name="ovr" placeholder="Min Rating:">
+        <label for="ovr-max"></label>
+        <input type="number" id="ovr-max" placeholder="Max Rating:">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="results"></div>
+    <div id="details"></div>
+</div>
+</body>
+</html>
