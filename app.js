@@ -93,7 +93,7 @@ function renderPlayers(playerList) {
             <p><strong>${player.Name}</strong>  ${player.Team}, ${player.League} <br>${player.Position} - Age: ${player.Age}   - Rating: ${player.OVR}</p>
             
         `;
-        playerDiv.addEventListener("click", () => showModal(player));
+        playerDiv.addEventListener("click", () => ShowPlayer(player));
         resultContainer.appendChild(playerDiv);
     });
 
@@ -101,9 +101,9 @@ function renderPlayers(playerList) {
 }
 
 
-function showModal(player) {
-    const modal = document.createElement("div");
-    modal.classList.add("deatil-div");
+function ShowPlayer(player) {
+    const stats = document.createElement("div");
+    stats.classList.add("deatil-div");
   
     let content = `<div id="stats"><h2>${player.Name}</h2><ul>`;
   
@@ -115,13 +115,13 @@ function showModal(player) {
   
     content += `</ul></div><button id="closeBtn">Close</button>`;
   
-    modal.innerHTML = content;
+    stats.innerHTML = content;
   
-    details.appendChild(modal);
+    details.appendChild(stats);
     
   
-    modal.querySelector("#closeBtn").addEventListener("click", () => {
-      details.removeChild(modal);
+    stats.querySelector("#closeBtn").addEventListener("click", () => {
+      details.removeChild(stats);
     });
   }
 
